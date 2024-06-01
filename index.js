@@ -19,7 +19,9 @@ resetBtn.addEventListener("click", ()=>{
     countDown.innerHTML = startingMinutes + ":00"
     clearInterval(interval);
     isRunning = false;
-    navigator.vibrate(100); 
+    navigator.vibrate(200); 
+
+    releaseScreen();
 })
 
 nextBtn.addEventListener("click" , ()=> {
@@ -33,7 +35,7 @@ nextBtn.addEventListener("click" , ()=> {
 
     clearInterval(interval);
     isRunning = false;
-    navigator.vibrate(100); 
+    navigator.vibrate(200); 
 })
 
 startBtn.addEventListener("click" , ()=> {
@@ -48,14 +50,15 @@ startBtn.addEventListener("click" , ()=> {
     } , 1000)
     }
     
-    navigator.vibrate(100);  
+    keepScreenOn();
+    navigator.vibrate(200);  
     isRunning = true;
 })
 
 pauseBtn.addEventListener("click" , ()=>{
     clearInterval(interval);
     isRunning = false;
-    navigator.vibrate(100); 
+    navigator.vibrate(200); 
 })
 
 //zaman güncelleme fonksiyonu
@@ -70,6 +73,20 @@ function updateTime(){
     countDown.innerHTML = minutes + ":" + seconds;
     timeInSeconds--;
 }
+
+//screen sleep i enable etmek için
+const keepScreenOn = async () => {
+    const wakeLock = await navigator.wakeLock.request("screen");
+}
+
+function releaseScreen(){
+    await.wakeLock.release();
+}
+
+
+
+
+
 
 /*
 reset button = bulunan aşamanın dakikasını resetler
