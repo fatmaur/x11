@@ -19,7 +19,7 @@ resetBtn.addEventListener("click", ()=>{
     countDown.innerHTML = startingMinutes + ":00"
     clearInterval(interval);
     isRunning = false;
-    navigator.vibrate(200); 
+    vibratePhone(300); 
 
     releaseScreen();
 })
@@ -35,7 +35,7 @@ nextBtn.addEventListener("click" , ()=> {
 
     clearInterval(interval);
     isRunning = false;
-    navigator.vibrate(200); 
+    vibratePhone(300); 
 })
 
 startBtn.addEventListener("click" , ()=> {
@@ -51,15 +51,16 @@ startBtn.addEventListener("click" , ()=> {
     }
     
     keepScreenOn();
-    navigator.vibrate(200);  
+    vibratePhone(300);  
     isRunning = true;
 })
 
 pauseBtn.addEventListener("click" , ()=>{
     clearInterval(interval);
     isRunning = false;
-    navigator.vibrate(200); 
+    vibratePhone(300); 
 })
+
 
 //zaman güncelleme fonksiyonu
 function updateTime(){
@@ -75,12 +76,14 @@ function updateTime(){
 }
 
 //screen sleep i enable etmek için
-const keepScreenOn = async () => {
-    const wakeLock = await navigator.wakeLock.request("screen");
+let wakeLock;
+async function keepScreenOn(){
+    wakeLock = await navigator.wakeLock.request();
 }
 
-function releaseScreen(){
-    await.wakeLock.release();
+//vibratasyon
+function vibratePhone(miliseconds){
+    navigator.vibrate(miliseconds);
 }
 
 
