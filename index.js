@@ -20,7 +20,6 @@ resetBtn.addEventListener("click", ()=>{
     clearInterval(interval);
     isRunning = false;
     vibratePhone(300); 
-
     releaseScreen();
 })
 
@@ -36,6 +35,7 @@ nextBtn.addEventListener("click" , ()=> {
     clearInterval(interval);
     isRunning = false;
     vibratePhone(300); 
+    releaseScreen()
 })
 
 startBtn.addEventListener("click" , ()=> {
@@ -59,6 +59,7 @@ pauseBtn.addEventListener("click" , ()=>{
     clearInterval(interval);
     isRunning = false;
     vibratePhone(300); 
+    releaseScreen()
 })
 
 
@@ -79,6 +80,11 @@ function updateTime(){
 let wakeLock;
 async function keepScreenOn(){
     wakeLock = await navigator.wakeLock.request();
+}
+
+//screen sleep disabling
+function releaseScreen(){
+    wakeLock.release();
 }
 
 //vibratasyon
