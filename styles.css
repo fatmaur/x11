@@ -1,5 +1,91 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
+@font-face {
+  font-family: digital;
+  src: url(fonts/digital-7.ttf);
+}
 * {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.container {
+  height: 60%;
+  min-width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
+  gap: 1.5rem;
+}
+
+.title {
+  color: white;
+  box-shadow: 0px 0px 15px 7px rgba(23, 210, 224, 0.75);
+  -webkit-box-shadow: 0px 0px 15px 7px rgba(23, 210, 224, 0.75);
+  -moz-box-shadow: 0px 0px 15px 7px rgba(23, 210, 224, 0.75);
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 15px 7px rgba(23, 210, 224, 0.75);
+  -webkit-box-shadow: 0px 0px 15px 7px rgba(23, 210, 224, 0.75);
+  -moz-box-shadow: 0px 0px 15px 7px rgba(23, 210, 224, 0.75);
+  border-radius: 4rem;
+}
+
+.stage-title {
+  color: white;
+  font-size: 1.6rem;
+}
+
+#aqua {
+  color: aqua;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.timer {
+  text-align: center;
+  width: 100%;
+}
+
+.count {
+  font-size: 10rem;
+  color: white;
+  font-family: digital;
+}
+
+.button-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 2rem;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid yellow;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.3rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  color: white;
 }

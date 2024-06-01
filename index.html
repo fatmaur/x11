@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">,
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>x11 Timer - by Fatmanur</title>
 </head>
@@ -11,13 +11,18 @@
 <body>
 
     <div class="container">
-        <h1 class="title-big">x11 Method by FTMNR</h1>
+        <div class="title">x11 Method by FTMNR</div>
         <div class="timer-container">
-            <span class="count">11.00</span>
-            <div class="button-container">
-                <button>Reset</button>
-                <button>Pause</button>
-                <button>Continue</button>
+
+            <div class="timer">
+                <p class="stage-title">Stage <span class="stage" id="aqua">1</span></p>
+                <span class="count"></span>
+                <div class="button-container">
+                    <button id="start">Start</button>
+                    <button id="pause">Pause</button>
+                    <button id="reset">Reset</button>
+                    <button id="next">Next</button>
+                </div>
             </div>
         </div>
     </div>
