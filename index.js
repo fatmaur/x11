@@ -71,11 +71,6 @@ function updateTime(){
     timeInSeconds--;
 }
 
-
-
-
-
-
 /*
 reset button = bulunan aşamanın dakikasını resetler
 eğer en başa dönülmek isteniyorsa sayfa yenilenir
