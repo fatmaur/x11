@@ -19,7 +19,7 @@ resetBtn.addEventListener("click", ()=>{
     countDown.innerHTML = startingMinutes + ":00"
     clearInterval(interval);
     isRunning = false;
-    vibratePhone(300); 
+    vibratePhone(150); 
     releaseScreen();
 })
 
@@ -34,8 +34,8 @@ nextBtn.addEventListener("click" , ()=> {
 
     clearInterval(interval);
     isRunning = false;
-    vibratePhone(300); 
-    releaseScreen()
+    vibratePhone(150); 
+    releaseScreen();
 })
 
 startBtn.addEventListener("click" , ()=> {
@@ -51,15 +51,15 @@ startBtn.addEventListener("click" , ()=> {
     }
     
     keepScreenOn();
-    vibratePhone(300);  
+    vibratePhone(150);  
     isRunning = true;
 })
 
 pauseBtn.addEventListener("click" , ()=>{
     clearInterval(interval);
     isRunning = false;
-    vibratePhone(300); 
-    releaseScreen()
+    vibratePhone(150); 
+    releaseScreen();
 })
 
 
@@ -79,23 +79,18 @@ function updateTime(){
 //screen sleep i enable etmek için
 let wakeLock;
 async function keepScreenOn(){
-    wakeLock = await navigator.wakeLock.request();
+    wakeLock = await navigator.wakeLock.request("screen");
 }
 
 //screen sleep disabling
-function releaseScreen(){
-    wakeLock.release();
+async function releaseScreen(){
+    await wakeLock.release();
 }
 
 //vibratasyon
 function vibratePhone(miliseconds){
     navigator.vibrate(miliseconds);
 }
-
-
-
-
-
 
 /*
 reset button = bulunan aşamanın dakikasını resetler
