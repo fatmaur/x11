@@ -45,8 +45,7 @@ startBtn.addEventListener("click", () => {
       updateTime();
       if (timeInSeconds < 0) {
         clearInterval(interval);
-        navigator.vibrate(2000, 500, 1000); //oturum bitti, titreşim
-        alert("NEXT SESSİON!!");
+        navigator.vibrate(1000, 500, 1000); //oturum bitti, titreşim
       }
     }, 1000);
   }
